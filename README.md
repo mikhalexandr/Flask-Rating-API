@@ -1,1 +1,1 @@
-# Flask-SenseiRescuing-API
+# API documentation
