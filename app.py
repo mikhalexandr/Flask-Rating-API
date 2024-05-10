@@ -10,7 +10,7 @@ api = Api(app)
 
 
 def main():
-    db_session.global_init("db/TopPlayers.db")
+    db_session.global_init("db/Users.db")
     app.run(port=8080, host="127.0.0.1")
 
 
