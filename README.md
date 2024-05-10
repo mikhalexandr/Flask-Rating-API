@@ -2,7 +2,7 @@
 API for interacting with the leaderboard in the game "Sensei Rescuing"
 
 > [!NOTE]
-> You can find the repository of the game itself [here](https://github.com/mikhalexandr/PyGame-Sensei-Rescuing)
+> You can find the repository of the game [here](https://github.com/mikhalexandr/PyGame-Sensei-Rescuing)
 
 ## 🛠️ Tech stack
 ㅤ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
