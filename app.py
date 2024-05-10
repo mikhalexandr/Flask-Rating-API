@@ -1,16 +1,26 @@
+import os
 from flask import Flask
 from flask_restful import Api
 from flask_cors import CORS
 
 from data import db_session
+from resources import *
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
-api = Api(app)
+
+
+def add_resources():
+    api = Api(app)
+    api.add_resource(LeaderboardResource, "/api/leaderboard")
+    api.add_resource(UserResource, "/api/user")
 
 
 def main():
+    if not os.path.isdir("db"):
+        os.mkdir("db")
     db_session.global_init("db/Users.db")
+    add_resources()
     app.run(port=8080, host="127.0.0.1")
 
 
