@@ -1,4 +1,4 @@
-# Sensei Rescuing API documentation
+# Sensei Rescuing API
 API for interacting with the leaderboard in the game "Sensei Rescuing"
 
 > [!NOTE]
