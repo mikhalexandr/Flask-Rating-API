@@ -1,1 +1,1 @@
-# Sensei Rescuing API documentation
+# 📝 Sensei Rescuing API documentation
