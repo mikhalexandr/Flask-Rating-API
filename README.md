@@ -17,17 +17,17 @@ git clone https://github.com/mikhalexandr/Flask-Sensei-Rescuing-API.git
 
 * Prepare a virtual environment using **one** of these methods
    - Installing a virtual environment yourself
-      + run these commands in the terminal
+      + run these commands in the terminal:
       ```
       python3 -m venv venv
       venv\Scripts\activate
       ```
-      + install all required dependencies from `requirements.txt`
+      + install all required dependencies from `requirements.txt`:
       ```
       pip install requirements.txt
       ```
   - Installing a virtual environment using `start.sh`
-      + run this code in a new file in the project
+      + run this code in a new file in the project:
       ```python
       import subprocess
 
