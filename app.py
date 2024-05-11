@@ -23,7 +23,7 @@ def main():
         os.mkdir("db")
     db_session.global_init("db/Users.db")
     add_resources()
-    app.run(port=8080, host="127.0.0.1")
+    app.run()
 
 
 if __name__ == '__main__':
