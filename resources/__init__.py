@@ -1,2 +1,2 @@
 from .leaderboard import LeaderboardResource
-from .users import UserAddResource, UserUploadResource
+from .users import UserAddResource, UserUploadResource, UserCheckResource

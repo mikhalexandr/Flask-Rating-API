@@ -40,3 +40,12 @@ class UserUploadResource(Resource):
             user.time = time
         session.commit()
         return jsonify({"success": "OK"})
+
+
+class UserCheckResource(Resource):
+    @staticmethod
+    def get(user_name):
+        session = db_session.create_session()
+        user = session.query(User).filter(User.name == user_name).first()
+        existence = True if user else False
+        return jsonify(existence)

@@ -21,6 +21,7 @@ def add_resources():
     api.add_resource(LeaderboardResource, "/api/leaderboard/<user_name>")
     api.add_resource(UserAddResource, "/api/user/add")
     api.add_resource(UserUploadResource, "/api/user/upload/<user_name>")
+    api.add_resource(UserCheckResource, "/api/user/check/<user_name>")
 
 
 def main():
