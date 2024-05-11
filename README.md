@@ -24,7 +24,7 @@ git clone https://github.com/mikhalexandr/Flask-Sensei-Rescuing-API.git
       ```
       + install all required dependencies from `requirements.txt`:
       ```
-      pip install requirements.txt
+      pip install -r requirements.txt
       ```
   - Installing a virtual environment using `start.sh`
       + run this code in a new file in the project:
