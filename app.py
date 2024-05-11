@@ -11,6 +11,11 @@ CORS(app, supports_credentials=True)
 app.config['JSON_AS_ASCII'] = False
 
 
+@app.route('/')
+def check_work():
+    return 'OK'
+
+
 def add_resources():
     api = Api(app)
     api.add_resource(LeaderboardResource, "/api/leaderboard/<user_name>")
