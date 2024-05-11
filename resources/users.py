@@ -4,7 +4,7 @@ from data import db_session
 from data.users import User
 
 
-class UserResource(Resource):
+class UserAddResource(Resource):
     @staticmethod
     def post():
         name = request.json["name"]
@@ -24,6 +24,8 @@ class UserResource(Resource):
         session.commit()
         return jsonify({"success": "OK"})
 
+
+class UserUploadResource(Resource):
     @staticmethod
     def put(user_name):
         level_amount = request.json["level_amount"]

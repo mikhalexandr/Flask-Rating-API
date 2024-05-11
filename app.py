@@ -8,12 +8,14 @@ from resources import *
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
+app.config['JSON_AS_ASCII'] = False
 
 
 def add_resources():
     api = Api(app)
-    api.add_resource(LeaderboardResource, "/api/leaderboard")
-    api.add_resource(UserResource, "/api/user")
+    api.add_resource(LeaderboardResource, "/api/leaderboard/<user_name>")
+    api.add_resource(UserAddResource, "/api/user/add")
+    api.add_resource(UserUploadResource, "/api/user/upload/<user_name>")
 
 
 def main():
