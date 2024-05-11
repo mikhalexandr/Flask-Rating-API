@@ -24,11 +24,11 @@ pip install requirements.txt
 
 ## 📝 API Documentation
 #### User Requests
-* POST "/api/user/add" (body: name, password, level_amount, time)  
+* POST "/api/user/add" (body: name -> str, password -> str, level_amount -> int, time -> int)  
   - adds a new user to the leaderboard
-* PUT "/api/user/upload/<user_name>" (body: level_amount, time)  
+* PUT "/api/user/upload/<user_name>" (body: level_amount -> int, time -> int)  
   - uploads user information about level_amount and time
 #### Leaderboard Requests
 * GET "/api/leaderboard/<user_name>"  
-  - gets all users in the sorted list
+  - gets all users in the sorted list (name -> str, level_amount -> int, time -> int)
   - gets the user's place in the leaderboard 
