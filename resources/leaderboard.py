@@ -8,7 +8,7 @@ from data.users import User
 class LeaderboardResource(Resource):
     @staticmethod
     def get():
-        name = request.json("name")
+        name = request.json["name"]
         session = db_session.create_session()
         users = session.query(User).all()
         leaders = []
@@ -21,8 +21,9 @@ class LeaderboardResource(Resource):
                     }
             )
         sorted_leaders = sorted(leaders, key=lambda x: (-x["level_amount"], x["time"]))
-        user_index = [x for x in range(len(sorted_leaders)) if sorted_leaders[x]["name"] == name][0]
-        if user_index is None:
-            abort(101, message=f"User {name} not found")
+        try:
+            user_index = [x for x in range(len(sorted_leaders)) if sorted_leaders[x]["name"] == name][0]
+        except IndexError:
+            abort(404, message=f"User [{name}] is not found")
         result = [sorted_leaders, user_index + 1]
         return jsonify(result)

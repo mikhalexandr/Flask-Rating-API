@@ -14,7 +14,7 @@ class RegisterResource(Resource):
         time = request.json["time"]
         session = db_session.create_session()
         if session.query(User).filter(User.name == name).first() is not None:
-            abort(100, message=f"User with name {name} already exists")
+            abort(409, message=f"User with name [{name}] already exists")
         user = User(
             name=name,
             level_amount=level_amount,
@@ -23,4 +23,4 @@ class RegisterResource(Resource):
         user.set_password(password)
         session.add(user)
         session.commit()
-        return jsonify({"success": "OK"})
+        return jsonify({"message": "OK"})

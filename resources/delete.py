@@ -13,9 +13,9 @@ class DeleteResource(Resource):
         session = db_session.create_session()
         user: User = session.get(User, name)
         if user is None:
-            abort(101, message=f"User {name} not found")
-        if user.password != password:
-            abort(102, message=f"User {name} password is incorrect")
+            abort(404, message=f"User [{name}] is not found")
+        if not user.check_password(password):
+            abort(401, message=f"[{name}]'s user password is incorrect")
         session.delete(user)
         session.commit()
-        return jsonify({"success": "OK"})
+        return jsonify({"message": "OK"})

@@ -14,13 +14,13 @@ class UpdateRecordResource(Resource):
         session = db_session.create_session()
         user: User = session.get(User, name)
         if user is None:
-            abort(101, message=f"User {name} not found")
+            abort(404, message=f"User [{name}] is not found")
         if level_amount:
             user.level_amount = level_amount
         if time:
             user.time = time
         session.commit()
-        return jsonify({"success": "OK"})
+        return jsonify({"message": "OK"})
 
 
 class UpdateNameResource(Resource):
@@ -32,14 +32,14 @@ class UpdateNameResource(Resource):
         session = db_session.create_session()
         user: User = session.get(User, name)
         if user is None:
-            abort(101, message=f"User {name} not found")
+            abort(404, message=f"User [{name}] is not found")
         if not user.check_password(password):
-            abort(102, message=f"User {name} password is incorrect")
+            abort(401, message=f"[{name}]'s user password is incorrect")
         if session.get(User, new_name) is not None:
-            abort(100, message=f"User {new_name} already exists")
+            abort(409, message=f"User [{new_name}] already exists")
         user.name = new_name
         session.commit()
-        return jsonify({"success": "OK"})
+        return jsonify({"message": "OK"})
 
 
 class UpdatePasswordResource(Resource):
@@ -51,11 +51,11 @@ class UpdatePasswordResource(Resource):
         session = db_session.create_session()
         user: User = session.get(User, name)
         if user is None:
-            abort(101, message=f"User {name} not found")
+            abort(404, message=f"User [{name}] is not found")
         if not user.check_password(password):
-            abort(102, message=f"User {name} password is incorrect")
+            abort(401, message=f"[{name}]'s user password is incorrect")
         if user.check_password(new_password):
-            abort(103, message=f"User {name} password is the same as the old one")
+            abort(409, message=f"[{name}]'s user password is the same as the old one")
         user.set_password(new_password)
         session.commit()
-        return jsonify({"success": "OK"})
+        return jsonify({"message": "OK"})
