@@ -47,7 +47,7 @@ PYTHONUNBUFFERED=1;SECRET_KEY=change_to_your_key
   - PATCH "/api/update/name" (body: name -> str, new_name -> str, password -> str)
     + updates user's name (requires password confirmation and name uniqueness check)
   - PATCH "/api/update/password" (body: name -> str, password -> str, new_password -> str)
-    + updates user's password (requires password confirmation and difference from the old one)
+    + updates user's password (requires password confirmation and password difference from the old one)
   - PATCH "/api/update/record" (body: name -> str, level_amount -> int, time -> int)
     + updates number of levels completed and time spent completing
 * **Delete Requests**
