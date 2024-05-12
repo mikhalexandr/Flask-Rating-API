@@ -6,22 +6,27 @@ from flask_cors import CORS
 from data import db_session
 from resources import *
 
+
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
-app.config['JSON_AS_ASCII'] = False
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
+app.config["JSON_AS_ASCII"] = False
 
 
-@app.route('/')
+@app.route("/")
 def check_work():
-    return 'OK'
+    return "OK"
 
 
 def add_resources():
     api = Api(app)
-    api.add_resource(LeaderboardResource, "/api/leaderboard/<user_name>")
-    api.add_resource(UserAddResource, "/api/user/add")
-    api.add_resource(UserUploadResource, "/api/user/upload/<user_name>")
-    api.add_resource(UserCheckResource, "/api/user/check/<user_name>")
+    api.add_resource(RegisterResource, "/api/register")
+    api.add_resource(LoginResource, "/api/login")
+    api.add_resource(UpdateNameResource, "/api/update/name")
+    api.add_resource(UpdatePasswordResource, "/api/update/password")
+    api.add_resource(UpdateRecordResource, "/api/update/record")
+    api.add_resource(DeleteResource, "/api/delete")
+    api.add_resource(LeaderboardResource, "/api/leaderboard")
 
 
 def main():
@@ -32,6 +37,5 @@ def main():
     app.run()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
-
