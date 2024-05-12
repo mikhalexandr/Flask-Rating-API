@@ -7,7 +7,7 @@ from data.users import User
 
 class UpdateRecordResource(Resource):
     @staticmethod
-    def put():
+    def patch():
         name = request.json["name"]
         level_amount = request.json["level_amount"]
         time = request.json["time"]
@@ -25,7 +25,7 @@ class UpdateRecordResource(Resource):
 
 class UpdateNameResource(Resource):
     @staticmethod
-    def put():
+    def patch():
         name = request.json["name"]
         new_name = request.json["new_name"]
         password = request.json["password"]
@@ -44,7 +44,7 @@ class UpdateNameResource(Resource):
 
 class UpdatePasswordResource(Resource):
     @staticmethod
-    def put():
+    def patch():
         name = request.json["name"]
         password = request.json["password"]
         new_password = request.json["new_password"]
