@@ -12,31 +12,17 @@ API that can create ratings and interact with them using user data. It can help 
 ## 🎯 Quick Start
 * Clone the project to your computer from Github using the command:
 ```
-git clone https://github.com/mikhalexandr/Flask-Sensei-Rescuing-API.git
+git clone https://github.com/mikhalexandr/Flask-Rating-API.git
 ```
 
-* Prepare a virtual environment using **one** of these methods
-   - Installing a virtual environment yourself
-      + run these commands in the terminal:
-      ```
-      python3 -m venv venv
-      venv\Scripts\activate
-      ```
-      + install all required dependencies from `requirements.txt`:
-      ```
-      pip install -r requirements.txt
-      ```
-  - Installing a virtual environment using `start.sh`
-      + run this code in a new file in the project:
-      ```python
-      import subprocess
-
-      subprocess.run(['./script.sh'])
-      ```
+* Install all required dependencies from `requirements.txt`:
+```
+pip install requirements.txt
+```
 
 * Run `app.py`
 
-## 📝 API Documentation
+## 📝 Documentation
 #### User Requests
 * POST "/api/user/add" (body: name -> str, password -> str, level_amount -> int, time -> int)  
   - adds a new user to the leaderboard
