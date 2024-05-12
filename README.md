@@ -22,7 +22,7 @@ pip install requirements.txt
 
 * Run `app.py`
 
-## 📝 API Documentation
+## 📝 Documentation
 #### User Requests
 * POST "/api/user/add" (body: name -> str, password -> str, level_amount -> int, time -> int)  
   - adds a new user to the leaderboard
