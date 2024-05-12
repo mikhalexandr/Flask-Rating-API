@@ -21,6 +21,7 @@ class LeaderboardResource(Resource):
                     }
             )
         sorted_leaders = sorted(leaders, key=lambda x: (-x["level_amount"], x["time"]))
+        user_index = 0
         try:
             user_index = [x for x in range(len(sorted_leaders)) if sorted_leaders[x]["name"] == name][0]
         except IndexError:
