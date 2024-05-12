@@ -1,5 +1,5 @@
 # Sensei Rescuing API
-API for interacting with the leaderboard in the game "Sensei Rescuing"
+API that can create ratings and interact with them using user data. It can help create leaderboards in games and other services
 
 > [!NOTE]
 > An example of using the API can be found in [this project](https://github.com/mikhalexandr/PyGame-Sensei-Rescuing)
