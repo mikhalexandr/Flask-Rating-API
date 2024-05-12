@@ -26,7 +26,7 @@ def add_resources():
     api.add_resource(UpdatePasswordResource, "/api/update/password")
     api.add_resource(UpdateRecordResource, "/api/update/record")
     api.add_resource(DeleteResource, "/api/delete")
-    api.add_resource(LeaderboardResource, "/api/leaderboard")
+    api.add_resource(RatingResource, "/api/rating")
 
 
 def main():

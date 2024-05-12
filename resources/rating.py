@@ -5,7 +5,7 @@ from data import db_session
 from data.users import User
 
 
-class LeaderboardResource(Resource):
+class RatingResource(Resource):
     @staticmethod
     def get():
         name = request.json["name"]

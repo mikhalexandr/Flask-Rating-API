@@ -5,24 +5,6 @@ from data import db_session
 from data.users import User
 
 
-class UpdateRecordResource(Resource):
-    @staticmethod
-    def patch():
-        name = request.json["name"]
-        level_amount = request.json["level_amount"]
-        time = request.json["time"]
-        session = db_session.create_session()
-        user: User = session.get(User, name)
-        if user is None:
-            abort(404, message=f"User [{name}] is not found")
-        if level_amount:
-            user.level_amount = level_amount
-        if time:
-            user.time = time
-        session.commit()
-        return jsonify({"message": "OK"})
-
-
 class UpdateNameResource(Resource):
     @staticmethod
     def patch():
@@ -57,5 +39,23 @@ class UpdatePasswordResource(Resource):
         if user.check_password(new_password):
             abort(409, message=f"[{name}]'s user password is the same as the old one")
         user.set_password(new_password)
+        session.commit()
+        return jsonify({"message": "OK"})
+
+
+class UpdateRecordResource(Resource):
+    @staticmethod
+    def patch():
+        name = request.json["name"]
+        level_amount = request.json["level_amount"]
+        time = request.json["time"]
+        session = db_session.create_session()
+        user: User = session.get(User, name)
+        if user is None:
+            abort(404, message=f"User [{name}] is not found")
+        if level_amount:
+            user.level_amount = level_amount
+        if time:
+            user.time = time
         session.commit()
         return jsonify({"message": "OK"})

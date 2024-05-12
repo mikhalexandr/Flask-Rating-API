@@ -9,8 +9,8 @@ class User(SqlAlchemyBase):
 
     name = sqlalchemy.Column(sqlalchemy.String, primary_key=True, unique=True, nullable=False)
     hashed_password = sqlalchemy.Column(sqlalchemy.String)
-    level_amount = sqlalchemy.Column(sqlalchemy.Integer)
-    time = sqlalchemy.Column(sqlalchemy.Integer)
+    level_amount = sqlalchemy.Column(sqlalchemy.Integer, default=0)
+    time = sqlalchemy.Column(sqlalchemy.Integer, default=0)
 
     def set_password(self, password):
         self.hashed_password = generate_password_hash(password)
