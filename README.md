@@ -1,8 +1,8 @@
-# Sensei Rescuing API
+# Rating API
 API that can create ratings and interact with them using user data. It can help create leaderboards in various services
 
 > [!NOTE]
-> An example of using the API can be found in [this project](https://github.com/mikhalexandr/PyGame-Sensei-Rescuing)
+> An example of using the API can be found in [this project](https://github.com/mikhalexandr/pygame-sensei-rescuing)
 
 ## 🛠️ Tech Stack
 ㅤ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
@@ -14,7 +14,7 @@ API that can create ratings and interact with them using user data. It can help 
 ## 🎯 Quick Start
 * Clone the project to your computer from Github using the command:
 ```
-git clone https://github.com/mikhalexandr/Flask-Rating-API.git
+git clone https://github.com/mikhalexandr/rating-api.git
 ```
 
 * Install all required dependencies from `requirements.txt`:
@@ -30,10 +30,10 @@ PYTHONUNBUFFERED=1;SECRET_KEY=change_to_your_key
 * Run `app.py`
 
 > [!TIP]
-> To create a docker container use [Dockerfile](https://github.com/mikhalexandr/Flask-Rating-API/blob/main/Dockerfile)
+> To create a docker container use [Dockerfile](https://github.com/mikhalexandr/rating-api/blob/main/Dockerfile)
 
 > [!TIP]
-> To host the API on [Glitch](https://glitch.com/) use [start.sh](https://github.com/mikhalexandr/Flask-Rating-API/blob/main/start.sh)
+> To host the API on [Glitch](https://glitch.com/) use [start.sh](https://github.com/mikhalexandr/rating-api/blob/main/start.sh)
  
 ## 📝 Documentation
 #### 🧩 SQLAlchemy Database Structure
