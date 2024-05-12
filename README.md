@@ -29,6 +29,12 @@ PYTHONUNBUFFERED=1;SECRET_KEY=change_to_your_key
 
 * Run `app.py`
 
+> [!TIP]
+> To create a docker container use [Dockerfile](https://github.com/mikhalexandr/Flask-Rating-API/blob/main/Dockerfile)
+
+> [!TIP]
+> To host the API on [Glitch](https://glitch.com/) use [start.sh](https://github.com/mikhalexandr/Flask-Rating-API/blob/main/start.sh)
+ 
 ## 📝 Documentation
 #### 🧩 SQLAlchemy Database Structure
 * Users Table
